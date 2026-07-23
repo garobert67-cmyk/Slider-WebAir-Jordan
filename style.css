@@ -935,7 +935,7 @@ footer{
 
 .menuescondido{
     background:rgba(53, 53, 53, 0.123);
-    width: 34%;
+    width: 44%;
     height: 100%;
     backdrop-filter: blur(20px);
     padding: 2px;
@@ -958,12 +958,12 @@ footer{
         gap: 5%;
         margin-top: 70%;
         cursor: pointer;
-       
+       line-height: 350%;
 
         li{
             font-family:"Montserrat" ;
             color: white;
-            font-size: 5vw;
+            font-size: 7vw;
             cursor: pointer !important;
             letter-spacing:.2em;
             transition: all .5s;

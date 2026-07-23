@@ -85,12 +85,15 @@ let menuEscondido = document.querySelector(".menuescondido")
 }) 
 
 window.addEventListener('mousemove', (event)=>{
+    if(window.innerWidth > 900){
     let luz = document.querySelector(".luz")
     const posicaoCard = menuEscondido.getBoundingClientRect();
     let x1 = event.clientX - posicaoCard.left
     let y2 = event.clientY - posicaoCard.top
     luz.style.opacity = 1
     luz.style.transform = `translate(${x1-100}px, ${y2-100}px)`
+    }
+    
 })
 
 
