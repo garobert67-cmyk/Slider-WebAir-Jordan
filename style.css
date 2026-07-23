@@ -1,0 +1,994 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+:root{
+    --white:rgba(255 255 255 / .8)
+}
+
+body{
+    background-color: #000000;
+    font-family: "Montserrat" sans-serif;
+    overflow-x: hidden;
+    
+}
+
+.preload{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 40;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  svg{
+    width: 20vw;
+    
+  }
+
+  .logo1{
+    position: absolute;
+  }
+
+  .percent{
+    width: 100%;
+    color: white;
+    font-style: italic;
+    font-family: "Oswald";
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.5vw;
+    letter-spacing: .2em;
+    
+
+  }
+
+}
+
+
+.menuescondido{
+    background:rgba(53, 53, 53, 0.123);
+    width: 21%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    padding: 2px;
+    position: absolute;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all .5s;
+    border-left: .5px solid rgba(253, 253, 253, 0.171);
+    z-index: 4;
+    overflow: hidden;
+    mix-blend-mode: color-dodge;
+    
+
+    ul{
+        list-style-type: none;
+        gap: 5%;
+        margin-top: 30%;
+        cursor: pointer;
+       
+
+        li{
+            font-family:"Montserrat" ;
+            color: white;
+            font-size: 3vw;
+            cursor: pointer !important;
+            letter-spacing:.2em;
+            transition: all .5s;            
+        }
+
+        li:hover{
+            cursor: pointer !important;
+            transform: translateY(-11px);
+        }
+    }
+
+    .luz{
+        width: 20vw;
+        height: 20vw;
+        border-radius: 247px;
+        background: rgba(255, 255, 255, 0.674);
+        z-index: 0;
+        filter: blur(180px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        mix-blend-mode: color-dodge;
+        
+    }
+}
+.menuescondido.ativo{
+    transform: translateX(0);
+}
+
+.bordinha{
+    padding: 1.8vw;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.containerPai{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-family: "Montserrat" sans-serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 10%;
+    position: absolute;
+    z-index: 5;
+    
+    .menu{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        gap: 3%;
+    }
+    
+    img{
+        width: 9vw;
+        
+    }
+
+    .iconham{
+        
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .iconham.ativo{
+        
+        .traco1{
+            transform: translate(-.5px,.5px) rotate(48deg);
+            
+        }
+
+        .traco2{
+            transform:translate( -2px, -12px) rotate(-46deg);
+            
+        }
+    }
+    
+    .traco1{
+        width: 2vw;
+        height: .5vh;
+        background-color: rgb(231, 235, 234);
+        margin-bottom: 20%;
+        cursor: pointer;
+        transition: all .5s;
+        
+    }
+
+    .traco2{
+        width: 2vw;
+        height: .5vh;
+        background-color: rgb(231, 235, 234);
+        cursor: pointer;
+        transition: all .5s;
+    }
+    
+    .login{
+        width: 27%;
+        gap: 6%;
+        display: flex;
+        justify-content: end;
+        
+        
+
+        button{
+            border: none;
+            outline: none;
+            padding: .8vw 2.2vw;
+            border-radius: 40px;
+            font-size: .85vw;
+            transition: all .5s;
+            cursor: pointer;
+            z-index: 3;
+
+            &:hover{
+                transform: translateY(-11px);
+            }
+        }
+
+        .primeiro{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.885);
+            
+        }
+
+        .segundo{
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+            
+            
+        }
+    }
+
+}
+
+.slider{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transition: background-Color 1.5s;
+
+    &.vermelho{
+        background-color: #140101;
+        
+    }
+    &.cinza{
+        background-color: #1e1e1e;
+    }
+    &.verde{
+        background-color: #031601;
+    }
+    &.marrom{
+        background-color: #160a01;
+        
+    }
+
+
+  
+
+  .slide{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        
+           
+        
+
+        &.active{
+            img{
+                transform: translate(0);
+                &:hover{
+                  animation: flutuar-suave 2s ease-in-out infinite;
+                } 
+            } 
+
+           .nike, h3{
+            transform: translate(0) !important;
+           }
+
+           h3::before,h3::after{
+            content: "NIKE";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:transparent;
+            opacity: 0.8;
+            }
+
+            h3::before{
+            left: 3px;
+            text-shadow: -3px 0 attr(data-cor), 3px 0 #fafafa;
+            mix-blend-mode: color-dodge;
+            clip-path: inset(45% 0 1% 0);
+            transform: translateX(0) !important;
+            animation: glitch-paragraph-1 4s infinite linear alternate-reverse;
+            }
+
+            h3::after{
+            left: -3px;
+            text-shadow: -3px 0 #f0f0f0, 3px 0 attr(data-cor);
+            clip-path: inset(20% 0 60% 0);
+             transform: translateX(0) !important;
+            animation: glitch-paragraph-2 4s infinite linear alternate-reverse;
+            }
+               
+        }
+
+
+        img{
+            position: relative;
+            transform: translate(-200%,-200%)rotate(200deg);
+            transition: all 1.2s cubic-bezier(1,-0.01,0.18,1);
+            width: 30vw;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+       
+
+        .nike{
+            position: absolute;
+            z-index: 0;
+            
+          
+
+
+            h3{
+                font-family: "Oswald";
+                font-size: 26vw;
+                transition: all 1.2s cubic-bezier(1,-0.01,0.18,1);
+                font-style: italic;
+            }
+
+            
+
+            h3::before{
+            left: 5px;
+            text-shadow: -3px 0 attr(data-cor), 3px 0 #fafafa;  
+            clip-path: inset(45% 0 1% 0);
+            transform: translateX(1000%);
+            animation: glitch-paragraph-1 .7s infinite linear alternate-reverse;
+            }
+
+            h3::after{
+            left: -5px;
+            text-shadow: -3px 0 #f0f0f0, 3px 0 attr(data-cor);
+            clip-path: inset(20% 0 60% 0);
+            transform: translateX(-1000%);
+            animation: glitch-paragraph-2 5s infinite linear alternate-reverse;
+            }
+           
+
+
+
+
+            h3:first-child{
+                color: rgba(255, 255, 255, 0);
+                mix-blend-mode: color-dodge;
+                transform: translateX(-200%);
+                -webkit-text-stroke: .2px rgba(255, 255, 255, 0.494);
+
+            }
+
+            h3:nth-child(2){
+              top: 0;
+              left: 0;
+              position: absolute;
+              color: transparent;
+              mix-blend-mode: color-dodge;
+              transform: translateX(200%);
+              -webkit-text-stroke: .5px rgba(255, 255, 255, 0.408);
+            }
+
+           
+            
+           
+
+
+            
+        }
+
+    }
+
+}
+
+.slider::before{
+        content: "";
+        position: absolute;
+        width: 528px;
+        height: 528px;
+        background-color: rgba(255, 255, 255, 0.925);
+        border-radius: 100px;
+        top: -150px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        filter: blur(400px);
+        mix-blend-mode: color-dodge;
+        transition: background-color .2s;
+
+    }
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0 10%;
+    .direita{
+        display: flex;
+        gap: 5%;
+
+        .botaoTenis{
+            transition: all .5s;
+            position: relative;
+            cursor: pointer;
+            &:hover{
+                transform: translateY(-11px);
+            }
+            img{
+                transform: rotate(20deg);
+            }
+
+        }
+
+        .botaoTenis.active{
+            scale: 1.4;
+            img{
+                transform: rotate(0deg);
+            }
+        }
+        .botaoTenis.active::before{
+            background: transparent;
+        }
+
+        .botaoTenis::before{
+            content: "";
+            mask-image: url(Assets/air.svg);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            width: 10vw;
+            height: 6vh;
+            mask-position: auto;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.904);
+            border-radius: 40px;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            transition: all .5s;
+            &:hover{
+                transform: translateY(-11px);
+            }
+            
+        }
+    }
+
+    .esquerda{
+
+        img{
+            mix-blend-mode: color-dodge;
+            opacity: .75;
+        }
+        h3{
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            color: var(--white);
+            font-size: 2vw;
+        }
+
+        small{
+            font-size: 1.4vw;
+        }
+    }
+
+}
+
+
+
+.nike:after,.nike:before{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 1;
+
+}
+
+
+
+ @keyframes glitch-paragraph-1 {
+    0% { clip-path: inset(30% 0 40% 0); }
+    15% { clip-path: inset(10% 0 70% 0); }
+    30% { clip-path: inset(50% 0 30% 0); }
+     45% { clip-path: inset(20% 0 60% 0); }
+    60% { clip-path: inset(70% 0 10% 0); }
+    75% { clip-path: inset(40% 0 50% 0); }
+    100% { clip-path: inset(30% 0 40% 0); }
+}
+
+ @keyframes glitch-paragraph-2 {
+   0% { clip-path: inset(60% 0 10% 0); }
+   20% { clip-path: inset(40% 0 50% 0); }
+   40% { clip-path: inset(10% 0 70% 0); }
+   60% { clip-path: inset(70% 0 10% 0); }
+   80% { clip-path: inset(30% 0 40% 0); }
+   100% { clip-path: inset(60% 0 10% 0); }
+}
+
+
+@keyframes flutuar-suave {
+  0% {
+    transform: translateY(0) rotate(0deg) ;
+  }
+  50% {
+    transform: translateY(-6px) rotate(1.5deg) ;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) ;
+  }
+}
+
+
+@media (max-width:706px) and (min-width:360px){
+    
+   
+ body{
+    overflow-x: hidden !important;
+ }
+
+.preload{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 40;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  svg{
+    width: 80vw;
+    
+  }
+
+  .logo1{
+    position: absolute;
+  }
+
+  .percent{
+    width: 100%;
+    color: white;
+    font-family:"Oswald" ;
+    font-style: italic;
+    letter-spacing: .2em;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 7vw;
+    
+
+  }
+
+}
+
+  header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10vw 10%;
+    position: absolute;
+    z-index: 39;
+    .logo{
+        width: 30%;
+    }
+    img{
+        width: 18vw;
+    }
+
+    .iconham.ativo{
+        
+        .traco1{
+            transform: translate(-1.5px,-1.5px) rotate(48deg);
+            
+        }
+
+        .traco2{
+            transform:translate( -2px, -12px) rotate(-46deg);
+            
+        }
+    }
+
+    .menu{
+      transform: translateX(0%);
+      width: 80%;
+      display: flex;
+      justify-content: end;
+      
+      .iconham{
+        width: 10%;
+
+        .traco1,.traco2{
+            width: 100%;
+        }
+
+      
+      }
+    }
+    ul{
+        
+        display: flex;
+        list-style-type: none;
+        color: var(--white);
+        font-family: "Montserrat";
+        text-align: end;
+        flex-direction: column;
+      
+
+        li{
+            transition: all .5s;
+            cursor: pointer;
+            gap: 5%;
+
+            
+            &:hover{
+                transform: translateY(-11px);
+            }
+        }
+    }
+
+    .login{
+        gap: 6%;
+        display: flex;
+        justify-content: start;
+        width: 80%;
+
+        button{
+            width: 40%;
+            border: none;
+            outline: none;
+            padding: 1.5vw 2vw ;
+            border-radius: 40px;
+            font-size: 2.4vw;
+            transition: all .5s;
+            cursor: pointer;
+            text-align: center;
+            
+            
+            &:hover{
+                transform: translateY(-11px);
+            }
+        }
+
+        .primeiro{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.885);
+            
+            
+        }
+
+        .segundo{
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+            
+        }
+        
+    }
+
+}
+
+.slider{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transition: background-Color 1.5s;
+
+    &.vermelho{
+        background-color: #140101;
+        
+    }
+    &.cinza{
+        background-color: #1e1e1e;
+    }
+    &.verde{
+        background-color: #031601;
+    }
+    &.marrom{
+        background-color: #160a01;
+        
+    }
+
+
+  
+
+  .slide{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        
+           
+        
+
+        &.active{
+            img{
+                transform: translate(0);
+                &:hover{
+                  animation: flutuar-suave 2s ease-in-out infinite;
+                } 
+            } 
+
+           .nike, h3{
+            transform: translate(0) !important;
+           }
+
+           h3::before,h3::after{
+            content: "NIKE";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:transparent;
+            opacity: 0.8;
+            }
+
+            h3::before{
+            left: 3px;
+            text-shadow: -3px 0 attr(data-cor), 3px 0 #fafafa;
+            mix-blend-mode: color-dodge;
+            clip-path: inset(45% 0 1% 0);
+            transform: translateX(0) !important;
+            animation: glitch-paragraph-1 4s infinite linear alternate-reverse;
+            }
+
+            h3::after{
+            left: -3px;
+            text-shadow: -3px 0 #f0f0f0, 3px 0 attr(data-cor);
+            clip-path: inset(20% 0 60% 0);
+             transform: translateX(0) !important;
+            animation: glitch-paragraph-2 4s infinite linear alternate-reverse;
+            }
+               
+        }
+
+
+        img{
+            position: relative;
+            transform: translate(-240%,-170%)rotate(200deg);
+            transition: all 1.2s cubic-bezier(1,-0.01,0.18,1);
+            width: 70vw;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+       
+
+        .nike{
+            position: absolute;
+            z-index: 0;
+            margin-left: 0%;
+            width: 100%;
+            
+          
+
+
+            h3{
+                font-family: "Oswald";
+                font-size: 47vw;
+                transition: all 1.2s cubic-bezier(1,-0.01,0.18,1);
+                font-style: italic;
+                
+            }
+
+            
+
+            h3::before{
+            left: 5px;
+            text-shadow: -3px 0 attr(data-cor), 3px 0 #fafafa;  
+            clip-path: inset(45% 0 1% 0);
+            transform: translateX(200%);
+            animation: glitch-paragraph-1 .7s infinite linear alternate-reverse;
+            
+            }
+
+            h3::after{
+            left: -5px;
+            text-shadow: -3px 0 #f0f0f0, 3px 0 attr(data-cor);
+            clip-path: inset(20% 0 60% 0);
+            transform: translateX(-200%);
+            animation: glitch-paragraph-2 5s infinite linear alternate-reverse;
+            overflow: hidden;
+            }
+           
+
+
+
+
+            h3:first-child{
+                color: rgba(255, 255, 255, 0);
+                mix-blend-mode: color-dodge;
+                transform: translateX(-200%);
+                -webkit-text-stroke: .2px rgba(255, 255, 255, 0.494);
+
+            }
+
+            h3:nth-child(2){
+              top: 0;
+              left: 0;
+              position: absolute;
+              color: transparent;
+              mix-blend-mode: color-dodge;
+              transform: translateX(200%);
+              -webkit-text-stroke: .5px rgba(255, 255, 255, 0.408);
+            }
+
+           
+            
+           
+
+
+            
+        }
+
+    }
+
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    flex-direction: column;
+    gap: 10%;
+    .direita{
+        width: 100%;
+        margin-top: 5%;
+        display: flex;
+        gap: 5%;
+        
+
+        .botaoTenis{
+            width: 100%;
+            transition: all .5s;
+            position: relative;
+            cursor: pointer;
+            img{
+                width: 19vw;
+            }
+            &:hover{
+                transform: translateY(-11px);
+            }
+            img{
+                transform: rotate(20deg);
+            }
+
+        }
+
+        .botaoTenis.active{
+            scale: 1.4;
+            img{
+                transform: rotate(0deg);
+            }
+        }
+        .botaoTenis.active::before{
+            background: transparent;
+        }
+
+        .botaoTenis::before{
+            content: "";
+            mask-image: url(Assets/air.svg);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            width: 20vw;
+            height: 5vh;
+            mask-position: auto;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.904);
+            border-radius: 40px;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            transition: all .5s;
+            &:hover{
+                transform: translateY(-11px);
+            }
+            
+        }
+    }
+
+    .esquerda{
+
+        img{
+            mix-blend-mode: color-dodge;
+            opacity: .75;
+            margin-bottom: -6%;
+        }
+        h3{
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            color: var(--white);
+            font-size: 3vw;
+        }
+
+        small{
+            font-size: 1.9vw;
+        }
+    }
+
+}
+
+.menuescondido{
+    background:rgba(53, 53, 53, 0.123);
+    width: 34%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    padding: 2px;
+    position: absolute;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all .5s;
+    border-left: .5px solid rgba(253, 253, 253, 0.171);
+    z-index: 4;
+    overflow: hidden;
+    mix-blend-mode: color-dodge;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+
+    ul{
+        list-style-type: none;
+        gap: 5%;
+        margin-top: 70%;
+        cursor: pointer;
+       
+
+        li{
+            font-family:"Montserrat" ;
+            color: white;
+            font-size: 5vw;
+            cursor: pointer !important;
+            letter-spacing:.2em;
+            transition: all .5s;
+                        
+        }
+
+        li:hover{
+            cursor: pointer !important;
+            transform: translateY(-11px);
+        }
+    }
+
+    .luz{
+        width: 30vw;
+        height: 30vw;
+        border-radius: 247px;
+        background: rgb(255, 255, 255);
+        z-index: 0;
+        filter: blur(100px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        mix-blend-mode: color-dodge;
+        
+    }
+}
+
+}
