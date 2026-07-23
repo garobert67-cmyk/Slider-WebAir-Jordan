@@ -727,7 +727,7 @@ footer{
 
            .nike, h3{
             transform: translate(0) !important;
-            overflow-x: hidden;
+            overflow: hidden;
            }
 
            h3::before,h3::after{
@@ -994,7 +994,7 @@ footer{
 }
 
 body{
-    overflow-x: hidden !important;
+    overflow: hidden !important;
  }
 
 }
