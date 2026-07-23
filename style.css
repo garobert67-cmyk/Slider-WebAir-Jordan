@@ -534,11 +534,9 @@ footer{
 
 
 @media (max-width:706px) and (min-width:360px){
-    
+
    
- body{
-    overflow-x: hidden !important;
- }
+ 
 
 .preload{
   width: 100%;
@@ -687,6 +685,7 @@ footer{
     height: 100vh;
     position: relative;
     transition: background-Color 1.5s;
+    overflow-x: hidden;
 
     &.vermelho{
         background-color: #140101;
@@ -728,6 +727,7 @@ footer{
 
            .nike, h3{
             transform: translate(0) !important;
+            overflow-x: hidden;
            }
 
            h3::before,h3::after{
@@ -796,6 +796,7 @@ footer{
             text-shadow: -3px 0 attr(data-cor), 3px 0 #fafafa;  
             clip-path: inset(45% 0 1% 0);
             transform: translateX(200%);
+            overflow: hidden;
             animation: glitch-paragraph-1 .7s infinite linear alternate-reverse;
             
             }
@@ -990,5 +991,9 @@ footer{
         
     }
 }
+
+body{
+    overflow-x: hidden !important;
+ }
 
 }
